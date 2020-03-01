@@ -1,0 +1,1 @@
+`image name for file in user_files subfolder`: name of the background file. You can add custom images to the folder "user_files" in the add-on folder. You see this folder if you click the button "View Files" on the right of the add-on manager window when you have selected this add-on. You must restart Anki so that changes take effect.
