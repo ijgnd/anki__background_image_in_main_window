@@ -1,6 +1,18 @@
 # Copyright: 2020- ijgnd
 #            Ankitects Pty Ltd and contributors
 # License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html 
+#
+# This add-on contains a file named web/wikigears.svg from
+# https://commons.wikimedia.org/wiki/File:Gear-kegelzahnrad.svg
+# (backup: https://web.archive.org/web/20161207153533/https://commons.wikimedia.org/wiki/File:Gear-kegelzahnrad.svg)
+# that was originally uploaded according to that page by the wikimedia user "MyriamThyes"
+# It contains the following Licensing Information:
+#     I , the copyright holder of this work, release this work into the public domain. 
+#     This applies worldwide.
+#     In some countries this may not be legally possible; if so:
+#     I grant anyone the right to use this work for any purpose, 
+#     without any conditions, unless such conditions 
+#     are required by law.
 
 """
 classic approach with wrap doesn't work: in main.py deckbrowser is instantiated 
@@ -83,6 +95,13 @@ def replace_css(web_content, context):
 gui_hooks.webview_will_set_content.append(replace_css)
 
 
+
+def replace_gears(deck_browser, content):
+    print(f"in replace_gears and type of content.tree is {type(content.tree)}")  # that's a string
+    old = """<img src='/_anki/imgs/gears.svg'"""
+    new = f"""<img src='/_addons/{addonfoldername}/web/wikigear.svg'"""
+    content.tree = content.tree.replace(old, new)
+gui_hooks.deck_browser_will_render_content.append(replace_gears)
 
 
 ## discarded unfinised idea: use js to modify the css after loading
