@@ -1,3 +1,9 @@
 {
-    "image name for file in user_files subfolder": "anki.png"    
+    "Image name for background": "AnKing.png",   
+    "Image name for gear": "AnKing.png",
+    "Toolbar image": false,
+    "background-size": "contain",
+    "background-position": "center",
+    "background-attachment": "fixed",
+    "background-repeat": "no-repeat"
 } 

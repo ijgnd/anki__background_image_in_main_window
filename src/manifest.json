@@ -1,4 +1,5 @@
 {
-    "package":"background_image_for_main_window",
-    "name": "background_image_for_main_window"
+    "min_point_version": 22,
+    "name": "Custom background image and gear icon",
+    "package": "Custom_background_image_and_gear_icon"
 }

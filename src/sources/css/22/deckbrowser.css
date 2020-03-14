@@ -22,6 +22,7 @@
 }
 
 /* Copyright: Ankitects Pty Ltd and contributors
+ *            AnKingMed
  * License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html */
 a.deck {
   color: black;
@@ -55,8 +56,13 @@ body {
   -webkit-user-select: none;
 }
 
+body.nightMode {
+  margin: 1em;
+  -webkit-user-select: none;
+}
+
 .current {
-  background-color: #e7e7e7;
+  background-color: rgba(231, 231, 231, 0.3)/*  #e7e7e7; */
 }
 
 .decktd {
@@ -100,7 +106,7 @@ body {
   border-bottom-color: #777;
 }
 .nightMode .current {
-  background-color: #29292B;
+  background-color: rgba(41, 41, 43, 0.3); /* #29292B; */
 }
 .nightMode .collapse {
   color: white;
