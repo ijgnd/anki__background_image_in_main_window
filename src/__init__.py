@@ -10,7 +10,7 @@ from aqt import mw
 from aqt import gui_hooks
 
 from .config import addon_path, addonfoldername, gc
-from .adjust_css_files import adjust_deckbrowser_css, adjust_toolbar_css
+
 
 
 css_folder_for_anki_version = {
@@ -38,10 +38,24 @@ change_copy = [os.path.basename(f) for f in os.listdir(source_absolute) if f.end
 for f in change_copy:
     with open(os.path.join(source_absolute, f)) as FO:
         filecontent = FO.read()
-    if f == "deckbrowser.css":
-        filecontent = adjust_deckbrowser_css(filecontent)
-    if f == "toolbar.css" and gc("Toolbar image"):
-        filecontent = adjust_toolbar_css(filecontent)
+
+    if v == 22:
+        from .adjust_css_files22 import adjust_deckbrowser_css22, adjust_toolbar_css22
+        if f == "deckbrowser.css":
+            filecontent = adjust_deckbrowser_css22(filecontent)
+        if f == "toolbar.css" and gc("Toolbar image"):
+            filecontent = adjust_toolbar_css22(filecontent)
+
+    # for later versions: try the latest
+    # this code will likely change when new Anki versions are released which might require 
+    # updates of this add-on.
+    else: 
+        from .adjust_css_files22 import adjust_deckbrowser_css22, adjust_toolbar_css22
+        if f == "deckbrowser.css":
+            filecontent = adjust_deckbrowser_css22(filecontent)
+        if f == "toolbar.css" and gc("Toolbar image"):
+            filecontent = adjust_toolbar_css22(filecontent)
+
     with open(os.path.join(web_absolute, f), "w") as FO:
         FO.write(filecontent)
 

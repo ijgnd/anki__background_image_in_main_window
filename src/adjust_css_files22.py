@@ -47,7 +47,7 @@ def get_bg_img():
             return ""
  
 
-def adjust_deckbrowser_css(filecontent):
+def adjust_deckbrowser_css22(filecontent):
     imgname = get_bg_img()
     cont = add_bg_img(filecontent, imgname, True)
     #do not invert gears if using personal image
@@ -58,7 +58,7 @@ def adjust_deckbrowser_css(filecontent):
     return cont
 
 
-def adjust_toolbar_css(filecontent):
+def adjust_toolbar_css22(filecontent):
     imgname = get_bg_img()
     cont = add_bg_img(filecontent, imgname, False)
     return cont
